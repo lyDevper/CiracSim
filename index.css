@@ -1,0 +1,51 @@
+body {    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 14px;
+}
+
+.mainDiv {
+    display: flex;
+    width: 100%;
+}
+
+/* left banner is 30% wide*/
+.leftBanner {
+    width: 28vw;
+    height: 100vh;
+    background-color: #22333A;
+
+    flex-direction: column;
+    overflow: scroll;
+
+    box-sizing: border-box;
+    padding: 15px;
+    
+    box-shadow: 1px 0px 15px 1px rgba(0, 0, 0, 0.50);
+    z-index: 1;
+}
+
+.rightContent {
+    width: 72vw;
+    height: 100vh;
+    background-color: #246C9D;
+}
+
+.inp1 {
+    box-sizing: border-box;
+    background: #39464E;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+
+}
+
+#canvas1 {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
