@@ -1,0 +1,9 @@
+/* this file contains css properties of content inside the leftBanner div*/
+
+.inp1 {
+    box-sizing: border-box;
+    background: #39464E;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+
+}

@@ -12,6 +12,8 @@ let circleLine = new CircleLine(canvas1, coor1);
 let ball = new Ball(canvas1, coor1);
 let goalPlane = new GoalPlane(canvas1, coor1);
 
+
+ParaInpHandler.buildHandlers();
 /*
 // for fun
 setInterval(() => {

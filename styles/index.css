@@ -36,14 +36,6 @@ body {
     background-color: #246C9D;
 }
 
-.inp1 {
-    box-sizing: border-box;
-    background: #39464E;
-    border: 1px solid #FFFFFF;
-    border-radius: 2px;
-
-}
-
 #canvas1 {
     width: 100%;
     height: 100%;

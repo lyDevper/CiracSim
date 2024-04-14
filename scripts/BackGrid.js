@@ -5,10 +5,17 @@ class BackGrid extends Sprite {
         this.gridCellSize = 0.2; // m
         this.pixPerGridCell = this.coor.meterToPix(this.gridCellSize); // px
 
+        this.backgroundColor = '#246C9D';
+
         this.gridColor = '#4C84AACC';
         this.gridWidth = 1;
         this.axisColor = '#D49AE8';
         this.axisWidth = 2;
+    }
+
+    drawBackground() {
+        this.ctx.fillStyle = this.backgroundColor;
+        this.ctx.fillRect(0, 0, this.coor.canvasWidth, this.coor.canvasHeight);
     }
 
     drawGridLines() {
@@ -54,6 +61,7 @@ class BackGrid extends Sprite {
     }
 
     render() {
+        this.drawBackground();
         this.drawGridLines();
         this.drawAxes();
     }
