@@ -1,7 +1,4 @@
-/* I'm refactoring code from static class GridProps to class CoorProps which will produce 
- instances for reusability in multiple canvases*/
-
- class CoorProps {
+class CoorProps {
     constructor(canvas) {
         this.canvas = canvas;
 
