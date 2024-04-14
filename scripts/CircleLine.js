@@ -1,13 +1,13 @@
 class CircleLine extends Sprite {
-    constructor(ctx) {
-        super(ctx);
+    constructor(canvas, coor) {
+        super(canvas, coor);
         this.color = '#99FBB5';
         this.lineWidth = 1.5; // px
     }
 
     drawCircle() {        
-        let r = GridProps.meterToPix(StatePara.r);
-        let c = GridProps.xyToCanvasPoint(0, StatePara.h_c);
+        let r = this.coor.meterToPix(StatePara.r);
+        let c = this.coor.xyToCanvasPoint(0, StatePara.h_c);
         
         this.ctx.fillStyle = 'transparent';
         this.ctx.strokeStyle = this.color;
@@ -18,8 +18,8 @@ class CircleLine extends Sprite {
     }
 
     drawAngLine() {
-        let r = GridProps.meterToPix(StatePara.r);
-        let c = GridProps.xyToCanvasPoint(0, StatePara.h_c);
+        let r = this.coor.meterToPix(StatePara.r);
+        let c = this.coor.xyToCanvasPoint(0, StatePara.h_c);
         let theta = StatePara.theta;
         let thetaRad = theta * Math.PI / 180;
 

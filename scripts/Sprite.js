@@ -1,6 +1,8 @@
 class Sprite {
-    constructor(ctx) {
-        this.ctx = ctx;
+    constructor(canvas, coor) {
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.coor = coor;
         Simulator.addSprite(this);
     }
 

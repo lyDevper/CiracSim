@@ -1,16 +1,16 @@
 class Ball extends Sprite {
-    constructor(ctx) {
-        super(ctx);
+    constructor(canvas, coor) {
+        super(canvas, coor);
         this.color = '#FFEBA6';        
     }
 
     drawBall() {
-        let ballRadius = GridProps.meterToPix(StatePara.ballDiameter / 2);
+        let ballRadius = this.coor.meterToPix(StatePara.ballDiameter / 2);
         let theta = StatePara.theta;
         let thetaRad = theta * Math.PI / 180;
         let x_i_actual = - StatePara.r * Math.cos(thetaRad);
         let y_i_actual = StatePara.h_c + StatePara.r * Math.sin(thetaRad);
-        let p_ball = GridProps.xyToCanvasPoint(x_i_actual, y_i_actual);
+        let p_ball = this.coor.xyToCanvasPoint(x_i_actual, y_i_actual);
 
         this.ctx.fillStyle = this.color;
         this.ctx.beginPath();

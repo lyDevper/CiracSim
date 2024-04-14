@@ -1,6 +1,9 @@
 class BackGrid extends Sprite {
-    constructor(ctx) {
-        super(ctx);
+    constructor(canvas, coor) {
+        super(canvas, coor);
+        
+        this.gridCellSize = 0.2; // m
+        this.pixPerGridCell = this.coor.meterToPix(this.gridCellSize); // px
 
         this.gridColor = '#4C84AACC';
         this.gridWidth = 1;
@@ -9,29 +12,29 @@ class BackGrid extends Sprite {
     }
 
     drawGridLines() {
-        let numGridLeft = Math.floor(GridProps.originX / GridProps.pixPerGridCell);
-        let numGridRight = Math.floor((GridProps.canvasWidth - GridProps.originX) / GridProps.pixPerGridCell);
-        let numGridTop = Math.floor(GridProps.originY / GridProps.pixPerGridCell);
-        let numGridBottom = Math.floor((GridProps.canvasHeight - GridProps.originY) / GridProps.pixPerGridCell);
+        let numGridLeft = Math.floor(this.coor.originX / this.pixPerGridCell);
+        let numGridRight = Math.floor((this.coor.canvasWidth - this.coor.originX) / this.pixPerGridCell);
+        let numGridTop = Math.floor(this.coor.originY / this.pixPerGridCell);
+        let numGridBottom = Math.floor((this.coor.canvasHeight - this.coor.originY) / this.pixPerGridCell);
 
         this.ctx.strokeStyle = this.gridColor;
         this.ctx.lineWidth = this.gridWidth;
         this.ctx.beginPath();
         for (let i = 1; i <= numGridLeft; i++) {
-            this.ctx.moveTo(GridProps.originX - i * GridProps.pixPerGridCell, 0);
-            this.ctx.lineTo(GridProps.originX - i * GridProps.pixPerGridCell, GridProps.canvasHeight);
+            this.ctx.moveTo(this.coor.originX - i * this.pixPerGridCell, 0);
+            this.ctx.lineTo(this.coor.originX - i * this.pixPerGridCell, this.coor.canvasHeight);
         }
         for (let i = 1; i <= numGridRight; i++) {
-            this.ctx.moveTo(GridProps.originX + i * GridProps.pixPerGridCell, 0);
-            this.ctx.lineTo(GridProps.originX + i * GridProps.pixPerGridCell, GridProps.canvasHeight);
+            this.ctx.moveTo(this.coor.originX + i * this.pixPerGridCell, 0);
+            this.ctx.lineTo(this.coor.originX + i * this.pixPerGridCell, this.coor.canvasHeight);
         }
         for (let i = 1; i <= numGridTop; i++) {
-            this.ctx.moveTo(0, GridProps.originY - i * GridProps.pixPerGridCell);
-            this.ctx.lineTo(GridProps.canvasWidth, GridProps.originY - i * GridProps.pixPerGridCell);
+            this.ctx.moveTo(0, this.coor.originY - i * this.pixPerGridCell);
+            this.ctx.lineTo(this.coor.canvasWidth, this.coor.originY - i * this.pixPerGridCell);
         }
         for (let i = 1; i <= numGridBottom; i++) {
-            this.ctx.moveTo(0, GridProps.originY + i * GridProps.pixPerGridCell);
-            this.ctx.lineTo(GridProps.canvasWidth, GridProps.originY + i * GridProps.pixPerGridCell);
+            this.ctx.moveTo(0, this.coor.originY + i * this.pixPerGridCell);
+            this.ctx.lineTo(this.coor.canvasWidth, this.coor.originY + i * this.pixPerGridCell);
         }
         this.ctx.stroke();
     }
@@ -42,11 +45,11 @@ class BackGrid extends Sprite {
 
         this.ctx.beginPath();
         // y-axis
-        this.ctx.moveTo(GridProps.originX, 0);
-        this.ctx.lineTo(GridProps.originX, GridProps.canvasHeight);
+        this.ctx.moveTo(this.coor.originX, 0);
+        this.ctx.lineTo(this.coor.originX, this.coor.canvasHeight);
         // x-axis
-        this.ctx.moveTo(0, GridProps.originY);
-        this.ctx.lineTo(GridProps.canvasWidth, GridProps.originY);
+        this.ctx.moveTo(0, this.coor.originY);
+        this.ctx.lineTo(this.coor.canvasWidth, this.coor.originY);
         this.ctx.stroke();
     }
 

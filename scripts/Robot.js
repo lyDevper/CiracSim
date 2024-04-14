@@ -1,6 +1,6 @@
 class Robot extends Sprite {
-    constructor(ctx) {
-        super(ctx);
+    constructor(canvas, coor) {
+        super(canvas, coor);
         this.baseLength = 0.40; // m
     }
 
@@ -10,8 +10,8 @@ class Robot extends Sprite {
         let baseLineColor = '#9CD5FF';
 
         // draw base line
-        let p1 = GridProps.xyToCanvasPoint(-baseLength / 2, 0);
-        let p2 = GridProps.xyToCanvasPoint(baseLength / 2, 0);
+        let p1 = this.coor.xyToCanvasPoint(-baseLength / 2, 0);
+        let p2 = this.coor.xyToCanvasPoint(baseLength / 2, 0);
 
         this.ctx.strokeStyle = baseLineColor;
         this.ctx.lineWidth = baseLineWidth;
@@ -21,8 +21,8 @@ class Robot extends Sprite {
         this.ctx.stroke();
 
         // draw vretical beam
-        let p3 = GridProps.xyToCanvasPoint(0, 0);
-        let p4 = GridProps.xyToCanvasPoint(0, StatePara.h_c);
+        let p3 = this.coor.xyToCanvasPoint(0, 0);
+        let p4 = this.coor.xyToCanvasPoint(0, StatePara.h_c);
 
         this.ctx.strokeStyle = baseLineColor;
         this.ctx.lineWidth = baseLineWidth;
