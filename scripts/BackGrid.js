@@ -2,8 +2,8 @@ class BackGrid extends Sprite {
     constructor(ctx) {
         super(ctx);
 
-        this.gridColor = '#4C84AA88';
-        this.gridWidth = 0.5;
+        this.gridColor = '#4C84AACC';
+        this.gridWidth = 1;
         this.axisColor = '#D49AE8';
         this.axisWidth = 2;
     }

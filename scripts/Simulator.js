@@ -7,6 +7,7 @@ class Simulator {
     }
 
     static updateFrame() {
+        ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
         for (let sprite of this.spriteList) {
             sprite.update();
             sprite.render();

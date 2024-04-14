@@ -1,4 +1,4 @@
-class statePara {
+class StatePara {
     static omega = 2 * Math.PI * 4; // rad/s
     static h_c = 0.36825; // m
 

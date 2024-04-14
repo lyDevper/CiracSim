@@ -43,5 +43,8 @@ class GridProps {
         return new Point(x, y);
     }
 
+    static xyToCanvasPoint(x, y) {
+        return this.actualToCanvasPoint(new Point(x, y));
+    }
 
 }
