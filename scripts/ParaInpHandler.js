@@ -6,6 +6,18 @@ class ParaInpHandler {
     and update with StatePara.
     */
 
+    constructor(inputId, resetId) {
+        this.input = document.getElementById(inputId);
+        this.resetBtn = document.getElementById(resetId);
+
+        this.input.addEventListener('change', this.handleInputChange.bind(this));
+        this.resetBtn.addEventListener('click', this.handleResetBtnClick.bind(this));
+    }
+    // tsuzuku
+
+    //setValue
+
+
 
     static buildHandlers() {
         // instantiate each handler as a static property
