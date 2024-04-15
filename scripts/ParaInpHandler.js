@@ -6,20 +6,39 @@ class ParaInpHandler {
     and update with StatePara.
     */
 
-    constructor(inputId, resetId) {
+    constructor(inputId, resetId, state, defaultVal) {
         this.input = document.getElementById(inputId);
         this.resetBtn = document.getElementById(resetId);
+        this.state = state;
+        this.defaultVal = defaultVal;
 
-        this.input.addEventListener('change', this.handleInputChange.bind(this));
-        this.resetBtn.addEventListener('click', this.handleResetBtnClick.bind(this));
+        // use arrow function to bind this
+        this.input.addEventListener('change', () => {
+            this.state.setValue(this.input.value);
+        });
+
+        this.resetBtn.addEventListener('click', () => {
+            this.state.setValue(this.defaultVal);
+        });
+
+        // bind state to input appearance
+        this.state.addReactFunc((val) => {
+            this.input.value = val;
+        });
+
+        this.input.value = this.defaultVal;
     }
-    // tsuzuku
+    
+    getValue() {
+        return this.input.value;
+    }
 
-    //setValue
-
-
+    setValue(value) {
+        this.input.value = value;
+    }
 
     static buildHandlers() {
         // instantiate each handler as a static property
+        this.rpm_handler = new ParaInpHandler('inp_rpm', 'reset_rpm', StatePara.state_rpm, DefaultPara.rpm);
     }
 }
