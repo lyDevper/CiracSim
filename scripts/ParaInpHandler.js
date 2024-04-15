@@ -6,7 +6,7 @@ class ParaInpHandler {
     and update with StatePara.
     */
 
-    constructor(inputId, resetId, state, defaultVal) {
+    constructor(inputId, resetId, state, defaultVal, numStep=0.1) {
         this.input = document.getElementById(inputId);
         this.resetBtn = document.getElementById(resetId);
         this.state = state;
@@ -27,6 +27,7 @@ class ParaInpHandler {
         });
 
         this.input.value = this.defaultVal;
+        this.input.step = numStep;
     }
     
     getValue() {
@@ -40,15 +41,27 @@ class ParaInpHandler {
     static buildHandlers() {
         // instantiate each handler as a static property
         this.rpm_handler = new ParaInpHandler('inp_rpm', 'reset_rpm', 
-                        StatePara.state_rpm, DefaultPara.rpm);
+                        StatePara.state_rpm, DefaultPara.rpm, 1);
 
         this.rps_handler = new ParaInpHandler('inp_rps', 'reset_rps', 
-                        StatePara.state_rps, DefaultPara.rps);
+                        StatePara.state_rps, DefaultPara.rps, 0.1);
 
         this.omega_handler = new ParaInpHandler('inp_omega', 'reset_omega',
-                        StatePara.state_omega, DefaultPara.omega);
+                        StatePara.state_omega, DefaultPara.omega, 0.1);
 
         this.h_c_handler = new ParaInpHandler('inp_h_c', 'reset_h_c',
-                        StatePara.state_h_c, DefaultPara.h_c);
+                        StatePara.state_h_c, DefaultPara.h_c, 0.01);
+
+        this.theta_handler = new ParaInpHandler('inp_theta', 'reset_theta',
+                        StatePara.state_theta, DefaultPara.theta, 0.1);
+
+        this.r_handler = new ParaInpHandler('inp_r', 'reset_r',
+                        StatePara.state_r, DefaultPara.r, 0.005);
+
+        this.x_f_handler = new ParaInpHandler('inp_x_f', 'reset_x_f',
+                        StatePara.state_x_f, DefaultPara.x_f, 0.01);
+
+        this.y_f_handler = new ParaInpHandler('inp_y_f', 'reset_y_f',
+                        StatePara.state_y_f, DefaultPara.y_f, 0.005);
     }
 }

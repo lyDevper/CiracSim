@@ -16,7 +16,8 @@
 </head>
 <body>
     <div class="mainDiv">
-        <div class="leftBanner">            
+        <div class="leftBanner">   
+
             <div class="panelDiv">
                 <div class="panelHeadDiv">
                     <h2 class="header1">Robot Parameters</h2>
@@ -102,9 +103,104 @@
                     </div>
 
                 </div>
-                
-                
+            </div>
 
+            <div class="panelDiv">
+                <div class="panelHeadDiv">
+                    <h2 class="header1">Forward</h2>
+                </div>
+
+                <div class="panelContentDiv">
+                    <!-- theta, r-->
+
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_theta">θ : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_theta" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">deg</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_theta">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div> 
+                    </div>
+
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_r">r : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_r" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">m</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_r">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div> 
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panelDiv">
+                <div class="panelHeadDiv">
+                    <h2 class="header1">Inverse</h2>
+                </div>
+
+                <div class="panelContentDiv">
+                    <!-- x_f, y_f-->
+
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_x_f">x_f : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_x_f" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">m</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_x_f">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div> 
+                    </div>
+
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_y_f">y_f : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_y_f" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">m</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_y_f">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div> 
+                    </div>
+
+                </div>
             </div>
 
         </div>        
