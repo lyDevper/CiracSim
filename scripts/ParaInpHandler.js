@@ -14,7 +14,7 @@ class ParaInpHandler {
 
         // use arrow function to bind this
         this.input.addEventListener('change', () => {
-            this.state.setValue(this.input.value);
+            this.state.setValue(parseFloat(this.input.value));
         });
 
         this.resetBtn.addEventListener('click', () => {
@@ -39,6 +39,16 @@ class ParaInpHandler {
 
     static buildHandlers() {
         // instantiate each handler as a static property
-        this.rpm_handler = new ParaInpHandler('inp_rpm', 'reset_rpm', StatePara.state_rpm, DefaultPara.rpm);
+        this.rpm_handler = new ParaInpHandler('inp_rpm', 'reset_rpm', 
+                        StatePara.state_rpm, DefaultPara.rpm);
+
+        this.rps_handler = new ParaInpHandler('inp_rps', 'reset_rps', 
+                        StatePara.state_rps, DefaultPara.rps);
+
+        this.omega_handler = new ParaInpHandler('inp_omega', 'reset_omega',
+                        StatePara.state_omega, DefaultPara.omega);
+
+        this.h_c_handler = new ParaInpHandler('inp_h_c', 'reset_h_c',
+                        StatePara.state_h_c, DefaultPara.h_c);
     }
 }

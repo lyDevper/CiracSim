@@ -87,18 +87,18 @@ class StatePara {
     static {
         // bind relation for omega, rpm, rps
         StatePara.state_omega.addReactFunc((val) => {
-            StatePara.state_rpm.value = val / (2 * Math.PI) * 60;
-            StatePara.state_rps.value = val / (2 * Math.PI);
+            StatePara.state_rpm.setValue(val / (2 * Math.PI) * 60);
+            StatePara.state_rps.setValue(val / (2 * Math.PI));
         });
 
         StatePara.state_rpm.addReactFunc((val) => {
-            StatePara.state_omega.value = val / 60 * 2 * Math.PI;
-            StatePara.state_rps.value = val / 60;
+            StatePara.state_omega.setValue(val / 60 * 2 * Math.PI);
+            StatePara.state_rps.setValue(val / 60);
         });
 
         StatePara.state_rps.addReactFunc((val) => {
-            StatePara.state_omega.value = val * 2 * Math.PI;
-            StatePara.state_rpm.value = val * 60;
+            StatePara.state_omega.setValue(val * 2 * Math.PI);
+            StatePara.state_rpm.setValue(val * 60);
         });        
     }
 }

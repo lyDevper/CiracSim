@@ -9,6 +9,10 @@ class State {
     }
 
     setValue(value) {
+        if (value === this.value) {
+            return;
+        }
+        
         this.value = value;
         for (let func of this.reactFunctions) {
             func(value);
