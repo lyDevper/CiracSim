@@ -10,12 +10,31 @@
 </head>
 <body>
     <div class="mainDiv">
-        <div class="leftBanner">
-            <label for="inp1">RPM : </label>
-            <input type="text" id="inp_rpm" class="inp1">
+        <div class="leftBanner">            
+            <div class="panelDiv">
+                <div class="panelHeadDiv">
+                    <h2 class="header1">Robot Parameters</h2>
+                </div>
+                <div class="fieldDiv">
+                    <div class="fieldCol1">
+                        <label for="inp1">RPM : </label>
+                    </div>
+                    <div class="fieldCol2">
+                        <input type="text" id="inp_rpm" class="inp1">
+                    </div>
+                    <div class="fieldCol3">
+                        <p class="unitText">RPM</p>
+                    </div>
+                    <div class="fieldCol4"></div>
+                    
+                    
+                </div>
+                
 
-            <label for="inp1">RPS : </label>
-            <input type="text" id="inp_rps" class="inp1">
+                <label for="inp1">RPS : </label>
+                <input type="text" id="inp_rps" class="inp1">
+            </div>
+
         </div>        
         <div class="rightContent">
             <canvas id="canvas1"></canvas>
