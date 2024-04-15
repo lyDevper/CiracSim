@@ -11,7 +11,7 @@ let robot = new Robot(canvas1, coor1);
 let circleLine = new CircleLine(canvas1, coor1);
 let ball = new Ball(canvas1, coor1);
 let goalPlane = new GoalPlane(canvas1, coor1);
-
+let trajectory = new Trajectory(canvas1, coor1);
 
 ParaInpHandler.buildHandlers();
 /*
