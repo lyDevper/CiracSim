@@ -11,7 +11,7 @@ class Trajectory extends Sprite {
         let dt = 0.02; // s
         
         // first point
-        let p0 = MathEngine.getPosAtTime(0);
+        let p0 = MathEngine.parametricCurveAtTime(0);
         p0 = this.coor.xyToCanvasPoint(p0.x, p0.y);
 
         this.ctx.strokeStyle = this.color;
@@ -20,7 +20,7 @@ class Trajectory extends Sprite {
         this.ctx.moveTo(p0.x, p0.y);
 
         for (let t = dt; t <= t_max; t += dt) {
-            let p = MathEngine.getPosAtTime(t);
+            let p = MathEngine.parametricCurveAtTime(t);
             p = this.coor.xyToCanvasPoint(p.x, p.y);
             this.ctx.lineTo(p.x, p.y);
             

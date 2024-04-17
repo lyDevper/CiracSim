@@ -7,7 +7,7 @@ class MathEngine {
         return rad * 180 / Math.PI;
     }
 
-    static getPosAtTime(t) {
+    static parametricCurveAtTime(t) {
         // the ball is in projectile motion. calculate parametric curve.        
         let thetaRad = MathEngine.degToRad(StatePara.theta);
         let omega = StatePara.omega;
@@ -23,7 +23,7 @@ class MathEngine {
         return new Point(x_t, y_t);
     }
 
-    static getYAtX(x) {
+    static trajectoryAtX(x) {
         let thetaRad = MathEngine.degToRad(StatePara.theta);
         let omega = StatePara.omega;
         let r = StatePara.r;
@@ -47,6 +47,83 @@ class MathEngine {
     }
 
     static getBallFinalPos() {
+        let x_f = StatePara.x_f;
+        let y_f = MathEngine.trajectoryAtX(x_f);
+        return new Point(x_f, y_f);
+    }
+
+    static y_f_of_theta(theta) {
+        let thetaRad = MathEngine.degToRad(theta);
+        let r = StatePara.r;
+        let h_c = StatePara.h_c;
+        let g = StatePara.g;
+        let x_f = StatePara.x_f;
+
+        let y_f = (h_c + r * Math.sin(thetaRad)) + 
+                  (x_f + r * Math.cos(thetaRad)) / Math.tan(thetaRad) + 
+                  - 0.5 * g * ((x_f + r * Math.cos(thetaRad)) / (StatePara.omega * r * Math.sin(thetaRad))) ** 2;
+        return y_f;
+    }
+
+    static y_f_of_r(r) {
+        let thetaRad = MathEngine.degToRad(StatePara.theta);
+        let h_c = StatePara.h_c;
+        let g = StatePara.g;
+        let x_f = StatePara.x_f;
+
+        let y_f = (h_c + r * Math.sin(thetaRad)) + 
+                  (x_f + r * Math.cos(thetaRad)) / Math.tan(thetaRad) + 
+                  - 0.5 * g * ((x_f + r * Math.cos(thetaRad)) / (StatePara.omega * r * Math.sin(thetaRad))) ** 2;
+        return y_f;
+    }
+
+    static solveForTheta() {
+        // solve for theta to satisfy the condition that the ball hits the target
+        // at x_f, y_f
+        // using Newtom-Raphson method
+        let y_f = StatePara.y_f;
+        let theta_result = MathEngine.solveFunctionRoot(MathEngine.y_f_of_theta, y_f, 89, 1e-6, 1000);
         
+        console.log(`theta_result solved to: ${theta_result}`);
+        return theta_result;        
+    }
+
+    static solveForR() {
+        // solve for r to satisfy the condition that the ball hits the target
+        // at x_f, y_f
+        // using Newtom-Raphson method
+        let y_f = StatePara.y_f;
+        let r_result = MathEngine.solveFunctionRoot(MathEngine.y_f_of_r, y_f, 0.5, 1e-6, 1000);
+        
+        console.log(`r_result solved to: ${r_result}`);
+        return r_result;
+    }
+
+    static solveFunctionRoot(f, expected_y, x0=0, tol=1e-6, max_iter=1000) {
+        // solve f(x) = expected_y
+        // using Newton-Raphson method
+        let x = x0;
+        let iter = 0;
+        let g = function(x) {
+            return f(x) - expected_y;
+        }
+        let dg_dx = MathEngine.getDerivative(g);
+
+        while (Math.abs(g(x)) > tol) {
+            if (iter > max_iter) {
+                console.log("Max iteration reached");
+                break;
+            }
+            x = x - g(x) / dg_dx(x);
+            iter++;
+        }
+
+        return x;
+    }
+
+    static getDerivative(f, dx=1e-6) {
+        return function(x) {
+            return (f(x + dx) - f(x)) / dx;
+        }
     }
 }

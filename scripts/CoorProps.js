@@ -67,7 +67,7 @@ class CoorProps {
 
             this.originX = this.canvasWidth / 5; // px
             this.originY = 2 * this.canvasHeight / 3; // px
-        }
+        }.bind(coor1);
         return coor1;
     }
  }

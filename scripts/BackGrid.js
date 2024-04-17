@@ -65,4 +65,8 @@ class BackGrid extends Sprite {
         this.drawGridLines();
         this.drawAxes();
     }
+
+    update() {
+        this.pixPerGridCell = this.coor.meterToPix(this.gridCellSize);
+    }
 }
