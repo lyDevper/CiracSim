@@ -63,5 +63,38 @@ class ParaInpHandler {
 
         this.y_f_handler = new ParaInpHandler('inp_y_f', 'reset_y_f',
                         StatePara.state_y_f, DefaultPara.y_f, 0.005);
+
+        // handle solve button
+        document.getElementById('solveBtn').addEventListener('click', () => {
+            if(StatePara.thetaRadioChecked) {
+                let theta_solved = MathEngine.solveForTheta();
+                StatePara.state_theta.setValue(theta_solved);
+            }
+            else if(StatePara.rRadioChecked) {
+                let r_solved = MathEngine.solveForR();
+                StatePara.state_r.setValue(r_solved);
+            }
+        });
+        
+        // handle theta, r selection radio button
+        
+        document.getElementById('theta_radio').addEventListener('change', () => {
+            StatePara.state_thetaRadioChecked.setValue(true);
+            StatePara.state_rRadioChecked.setValue(false);
+        });
+        StatePara.state_thetaRadioChecked.addReactFunc((val) => {
+            document.getElementById('theta_radio').checked = val;
+        });
+
+        document.getElementById('r_radio').addEventListener('change', () => {
+            StatePara.state_thetaRadioChecked.setValue(false);
+            StatePara.state_rRadioChecked.setValue(true);
+        });
+        StatePara.state_rRadioChecked.addReactFunc((val) => {
+            document.getElementById('r_radio').checked = val;
+        });
+
+        document.getElementById('theta_radio').checked = true;
+        
     }
 }

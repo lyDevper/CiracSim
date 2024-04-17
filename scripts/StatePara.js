@@ -20,6 +20,11 @@ class DefaultPara {
     static ballDiameter = 0.040; // m
 
     static g = 9.783; // m/s^2 at Bangkok
+
+    // UI states
+    static thetaRadioChecked = true;
+    static rRadioChecked = false;
+
 }
 
 class StatePara {
@@ -43,6 +48,10 @@ class StatePara {
     static state_ballDiameter = new State(DefaultPara.ballDiameter); // m
 
     static state_g = new State(DefaultPara.g); // m/s^2 at Bangkok
+
+    // UI atates -----------------------------------------------------
+    static state_thetaRadioChecked = new State(true);
+    static state_rRadioChecked = new State(true);
 
     // getters and setters for each state ----------------------------
     static get omega() { return StatePara.state_omega.getValue(); }
@@ -84,6 +93,13 @@ class StatePara {
     static get g() { return StatePara.state_g.getValue(); }
     static set g(value) { StatePara.state_g.setValue(value); }
 
+    // UI state getters and setters ----------------------------------
+    static get thetaRadioChecked() { return StatePara.state_thetaRadioChecked.getValue(); }
+    static set thetaRadioChecked(value) { StatePara.state_thetaRadioChecked.setValue(value); }
+
+    static get rRadioChecked() { return StatePara.state_rRadioChecked.getValue(); }
+    static set rRadioChecked(value) { StatePara.state_rRadioChecked.setValue(value); }
+
     static {
         // bind relation for omega, rpm, rps
         StatePara.state_omega.addReactFunc((val) => {
@@ -99,6 +115,15 @@ class StatePara {
         StatePara.state_rps.addReactFunc((val) => {
             StatePara.state_omega.setValue(val * 2 * Math.PI);
             StatePara.state_rpm.setValue(val * 60);
-        });        
+        });
+        
+        // bind relation for theta, r (not necessary)
+        StatePara.state_thetaRadioChecked.addReactFunc((val) => {
+            StatePara.state_rRadioChecked.setValue(!val);
+        });
+
+        StatePara.state_rRadioChecked.addReactFunc((val) => {
+            StatePara.state_thetaRadioChecked.setValue(!val);
+        });
     }
 }

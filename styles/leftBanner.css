@@ -106,3 +106,31 @@
 .icon1 {
     font-size: 16px;
 }
+
+.icon2 {
+    font-size: 18px;
+}
+
+#solveBtn {
+    height: 30px;
+    width: 78px;
+    background: #41666B;
+    border: 1px solid white;
+    border-radius: 2px;
+    color: white;
+
+    
+    font-size: 14px;
+    font-family: "Noto Sans Thai", "Roboto";
+    
+    cursor: pointer;
+    transition-duration: 0.08s;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#solveBtn:hover {
+    background: #3f764b;
+    box-shadow: 0px 0px 3px 1px #d9f9ec91;
+}
