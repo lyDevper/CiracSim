@@ -111,15 +111,18 @@
     font-size: 18px;
 }
 
+.radio1 {
+    /**/
+}
+
 #solveBtn {
     height: 30px;
-    width: 78px;
+    width: 70px;
     background: #41666B;
     border: 1px solid white;
     border-radius: 2px;
     color: white;
 
-    
     font-size: 14px;
     font-family: "Noto Sans Thai", "Roboto";
     

@@ -21,7 +21,7 @@ class CoorProps {
         this.canvasWidth = this.canvas.width;
         this.canvasHeight = this.canvas.height;
 
-        this.pixPerMeter = this.canvasWidth / 3.6; // px/m        
+        this.pixPerMeter = this.canvasWidth / 4; // px/m        
 
         this.originX = this.canvasWidth / 5; // px
         this.originY = 2 * this.canvasHeight / 3; // px
@@ -63,11 +63,12 @@ class CoorProps {
             this.canvasWidth = this.canvas.width;
             this.canvasHeight = this.canvas.height;
 
-            this.pixPerMeter = this.canvasWidth / 3.6; // px/m        
+            this.pixPerMeter = this.canvasWidth / 4; // px/m
 
             this.originX = this.canvasWidth / 5; // px
             this.originY = 2 * this.canvasHeight / 3; // px
         }.bind(coor1);
+        coor1.updateCanvasSize();
         return coor1;
     }
  }
