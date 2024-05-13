@@ -53,6 +53,18 @@ class ParaInpHandler {
         this.h_c_handler = new ParaInpHandler('inp_h_c', 'reset_h_c',
                         StatePara.state_h_c, DefaultPara.h_c, 0.01);
 
+        this.tableHeight_handler = new ParaInpHandler('inp_tableHeight', 'reset_tableHeight',
+                        StatePara.state_tableHeight, DefaultPara.tableHeight, 0.1);
+
+        this.triangleHeight_handler = new ParaInpHandler('inp_triangleHeight', 'reset_triangleHeight',
+                        StatePara.state_triangleHeight, DefaultPara.triangleHeight, 0.1);
+
+        this.goalDiameter = new ParaInpHandler('inp_goalDiameter', 'reset_goalDiameter',
+                        StatePara.state_goalDiameter, DefaultPara.goalDiameter, 0.1);
+
+        this.ballDiameter = new ParaInpHandler('inp_ballDiameter', 'reset_ballDiameter',
+                        StatePara.state_ballDiameter, DefaultPara.ballDiameter, 0.1);
+
         this.theta_handler = new ParaInpHandler('inp_theta', 'reset_theta',
                         StatePara.state_theta, DefaultPara.theta, 0.1);
 
