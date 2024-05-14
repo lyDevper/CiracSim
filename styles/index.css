@@ -31,7 +31,7 @@ button {
 
 /* left banner is 30% wide*/
 .leftBanner {
-    width: 28vw;
+    width: 32vw;
     height: 100vh;
     background-color: #22333A;
 
@@ -46,7 +46,7 @@ button {
 }
 
 .rightContent {
-    width: 72vw;
+    width: 68vw;
     height: 100vh;
     background-color: #246C9D;
 }
