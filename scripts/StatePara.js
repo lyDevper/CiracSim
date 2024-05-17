@@ -8,10 +8,17 @@ class DefaultPara {
     // forward parameters
     static theta = 64 // deg
     static r = 0.29 // m
+    static z_robot = 0.84; // m // z of the robot
 
     // inverse parameters
     static x_f = 2.20; // m
     static y_f = 0.985; // m
+    static z_f = 0.240; // m // z of the ball from triangle origin
+
+    // Error compensations
+    static cmpst_theta = 0; // deg
+    static cmpst_r = 0; // m
+    static cmpst_z_robot = 0; // m // compensate the rotating link from center z=0
 
     // fixed parameters
     static tableHeight = 0.7550; // m
@@ -28,6 +35,7 @@ class DefaultPara {
 }
 
 class StatePara {
+    // robot parameters
     static state_omega = new State(DefaultPara.omega); // rad/s
     static state_rpm = new State(DefaultPara.rpm); // rpm
     static state_rps = new State(DefaultPara.rps); // rps
@@ -36,10 +44,17 @@ class StatePara {
     // forward parameters
     static state_theta = new State(DefaultPara.theta); // deg
     static state_r = new State(DefaultPara.r); // m
+    static state_z_robot = new State(DefaultPara.z_robot); // m
 
     // inverse parameters
     static state_x_f = new State(DefaultPara.x_f); // m
     static state_y_f = new State(DefaultPara.y_f); // m
+    static state_z_f = new State(DefaultPara.z_f); // m
+
+    // Error compensations
+    static state_cmpst_theta = new State(DefaultPara.cmpst_theta); // deg
+    static state_cmpst_r = new State(DefaultPara.cmpst_r); // m
+    static state_cmpst_z_robot = new State(DefaultPara.cmpst_z_robot); // m
 
     // fixed parameters
     static state_tableHeight = new State(DefaultPara.tableHeight); // m
@@ -72,11 +87,26 @@ class StatePara {
     static get r() { return StatePara.state_r.getValue(); }
     static set r(value) { StatePara.state_r.setValue(value); }
 
+    static get z_robot() { return StatePara.state_z_robot.getValue(); }
+    static set z_robot(value) { StatePara.state_z_robot.setValue(value); }
+
     static get x_f() { return StatePara.state_x_f.getValue(); }
     static set x_f(value) { StatePara.state_x_f.setValue(value); }
 
     static get y_f() { return StatePara.state_y_f.getValue(); }
     static set y_f(value) { StatePara.state_y_f.setValue(value); }
+
+    static get z_f() { return StatePara.state_z_f.getValue(); }
+    static set z_f(value) { StatePara.state_z_f.setValue(value); }
+
+    static get cmpst_theta() { return StatePara.state_cmpst_theta.getValue(); }
+    static set cmpst_theta(value) { StatePara.state_cmpst_theta.setValue(value); }
+
+    static get cmpst_r() { return StatePara.state_cmpst_r.getValue(); }
+    static set cmpst_r(value) { StatePara.state_cmpst_r.setValue(value); }
+
+    static get cmpst_z_robot() { return StatePara.state_cmpst_z_robot.getValue(); }
+    static set cmpst_z_robot(value) { StatePara.state_cmpst_z_robot.setValue(value); }
 
     static get tableHeight() { return StatePara.state_tableHeight.getValue(); }
     static set tableHeight(value) { StatePara.state_tableHeight.setValue(value); }
