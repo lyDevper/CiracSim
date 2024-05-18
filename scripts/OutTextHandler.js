@@ -38,24 +38,24 @@ class OutTextHandler {
         // instantiate each handler as a static property
         this.theta_handler = new OutTextHandler('outTxt_theta', StatePara.state_theta);
         this.r_handler = new OutTextHandler('outTxt_r', StatePara.state_r);
-        this.y_f_handler = new OutTextHandler('outTxt_y_f', StatePara.state_y_f);
+        this.y_goal_handler = new OutTextHandler('outTxt_y_goal', StatePara.state_y_goal);
 
         // results thae must be calculated
         this.y_intercept_handler = new OutTextHandler('outTxt_y_intercept', null, function(state) {
-            let y_f = MathEngine.getBallFinalPos().y;
-            this.setText(y_f.toFixed(4));
+            let y_goal = MathEngine.getBallFinalPos().y;
+            this.setText(y_goal.toFixed(4));
         });
         
         this.error_y_handler = new OutTextHandler('outTxt_error_y', null, function(state) {
             let y_f = MathEngine.getBallFinalPos().y;
-            let y_goal = StatePara.y_f;
+            let y_goal = StatePara.y_goal;
             let error_y = y_f - y_goal;
             this.setText(error_y.toFixed(4));
         });
 
         this.error_y_cm_handler = new OutTextHandler('outTxt_error_y_cm', null, function(state) {
             let y_f = MathEngine.getBallFinalPos().y;
-            let y_goal = StatePara.y_f;
+            let y_goal = StatePara.y_goal;
             let error_y_cm = (y_f - y_goal) * 100;
             this.setText(error_y_cm.toFixed(2));
         });

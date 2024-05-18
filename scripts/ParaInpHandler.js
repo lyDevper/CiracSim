@@ -71,11 +71,11 @@ class ParaInpHandler {
         this.r_handler = new ParaInpHandler('inp_r', 'reset_r',
                         StatePara.state_r, DefaultPara.r, 0.005);
 
-        this.x_f_handler = new ParaInpHandler('inp_x_f', 'reset_x_f',
-                        StatePara.state_x_f, DefaultPara.x_f, 0.01);
+        this.x_goal_handler = new ParaInpHandler('inp_x_goal', 'reset_x_goal',
+                        StatePara.state_x_goal, DefaultPara.x_goal, 0.01);
 
-        this.y_f_handler = new ParaInpHandler('inp_y_f', 'reset_y_f',
-                        StatePara.state_y_f, DefaultPara.y_f, 0.005);
+        this.y_goal_handler = new ParaInpHandler('inp_y_goal', 'reset_y_goal',
+                        StatePara.state_y_goal, DefaultPara.y_goal, 0.005);
 
         // handle solve button
         document.getElementById('solveBtn').addEventListener('click', () => {

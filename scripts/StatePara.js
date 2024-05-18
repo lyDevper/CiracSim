@@ -11,9 +11,9 @@ class DefaultPara {
     static z_robot = 0.84; // m // z of the robot
 
     // inverse parameters
-    static x_f = 2.20; // m
-    static y_f = 0.985; // m
-    static z_f = 0.240; // m // z of the ball from triangle origin
+    static x_goal = 2.20; // m
+    static y_goal = 0.985; // m
+    static z_goal = 0.240; // m // z of the ball from triangle origin
 
     // Error compensations
     static cmpst_theta = 0; // deg
@@ -49,9 +49,9 @@ class StatePara {
     static state_z_robot = new State(DefaultPara.z_robot); // m
 
     // inverse parameters
-    static state_x_f = new State(DefaultPara.x_f); // m
-    static state_y_f = new State(DefaultPara.y_f); // m
-    static state_z_f = new State(DefaultPara.z_f); // m
+    static state_x_goal = new State(DefaultPara.x_goal); // m
+    static state_y_goal = new State(DefaultPara.y_goal); // m
+    static state_z_goal = new State(DefaultPara.z_goal); // m
 
     // Error compensations
     static state_cmpst_theta = new State(DefaultPara.cmpst_theta); // deg
@@ -94,14 +94,14 @@ class StatePara {
     static get z_robot() { return StatePara.state_z_robot.getValue(); }
     static set z_robot(value) { StatePara.state_z_robot.setValue(value); }
 
-    static get x_f() { return StatePara.state_x_f.getValue(); }
-    static set x_f(value) { StatePara.state_x_f.setValue(value); }
+    static get x_goal() { return StatePara.state_x_goal.getValue(); }
+    static set x_goal(value) { StatePara.state_x_goal.setValue(value); }
 
-    static get y_f() { return StatePara.state_y_f.getValue(); }
-    static set y_f(value) { StatePara.state_y_f.setValue(value); }
+    static get y_goal() { return StatePara.state_y_goal.getValue(); }
+    static set y_goal(value) { StatePara.state_y_goal.setValue(value); }
 
-    static get z_f() { return StatePara.state_z_f.getValue(); }
-    static set z_f(value) { StatePara.state_z_f.setValue(value); }
+    static get z_goal() { return StatePara.state_z_goal.getValue(); }
+    static set z_goal(value) { StatePara.state_z_goal.setValue(value); }
 
     static get cmpst_theta() { return StatePara.state_cmpst_theta.getValue(); }
     static set cmpst_theta(value) { StatePara.state_cmpst_theta.setValue(value); }
