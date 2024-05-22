@@ -40,13 +40,9 @@ class PanelClpsHandler {
         this.robotPara_handler = new PanelClpsHandler('clpsBtn_robotPara', 'panelCnt_robotPara', true);
         this.forward_handler = new PanelClpsHandler('clpsBtn_forward', 'panelCnt_forward', true);
         this.inverse_handler = new PanelClpsHandler('clpsBtn_inverse', 'panelCnt_inverse', true);
-<<<<<<< Updated upstream
-        this.fixedPara_handler = new PanelClpsHandler('clpsBtn_fixedPara', 'panelCnt_fixedPara', false)
-=======
         this.fixedPara_handler = new PanelClpsHandler('clpsBtn_fixedPara', 'panelCnt_fixedPara', false);
         this.goalPos_handler = new PanelClpsHandler('clpsBtn_goalPos', 'panelCnt_goalPos', true);
         this.errorCmpst_handler = new PanelClpsHandler('clpsBtn_errorCmpst', 'panelCnt_errorCmpst', false);
->>>>>>> Stashed changes
     }
 
 }

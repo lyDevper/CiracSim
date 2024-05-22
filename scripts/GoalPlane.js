@@ -10,11 +10,11 @@ class GoalPlane extends Sprite {
     drawGoalPlane() {
         let tableHeight = StatePara.tableHeight;
         let basketHeight = StatePara.triangleHeight;
-        let x_f = StatePara.x_f;
+        let x_goal = StatePara.x_goal;
 
-        let p1 = this.coor.xyToCanvasPoint(x_f, 0);
-        let p2 = this.coor.xyToCanvasPoint(x_f, tableHeight);
-        let p3 = this.coor.xyToCanvasPoint(x_f, tableHeight + basketHeight);
+        let p1 = this.coor.xyToCanvasPoint(x_goal, 0);
+        let p2 = this.coor.xyToCanvasPoint(x_goal, tableHeight);
+        let p3 = this.coor.xyToCanvasPoint(x_goal, tableHeight + basketHeight);
 
         // draw table
         this.ctx.fillStyle = "transparent"
