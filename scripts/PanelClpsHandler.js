@@ -42,6 +42,7 @@ class PanelClpsHandler {
         this.inverse_handler = new PanelClpsHandler('clpsBtn_inverse', 'panelCnt_inverse', true);
         this.fixedPara_handler = new PanelClpsHandler('clpsBtn_fixedPara', 'panelCnt_fixedPara', false);
         this.goalPos_handler = new PanelClpsHandler('clpsBtn_goalPos', 'panelCnt_goalPos', true);
+        this.errorCmpst_handler = new PanelClpsHandler('clpsBtn_errorCmpst', 'panelCnt_errorCmpst', false);
     }
 
 }

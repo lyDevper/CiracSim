@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="panelContentDiv" id="panelCnt_fixedPara">
-                    <!-- table height, triangle height, goal diameter, ball diameter-->
+                    <!-- table height, triangle side, triangle height, goal diameter, ball diameter, basket z offset-->
 
                     <div class="fieldDiv">
                         <div class="fieldCol1">
@@ -138,6 +138,25 @@
                         </div>
                         <div class="fieldCol4">
                             <button class="resetBtn" id="reset_tableHeight">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_triangleSide">Triangle side : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_triangleSide" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">m</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_triangleSide">
                                 <span class="material-symbols-outlined icon1">
                                     refresh
                                 </span>
@@ -202,6 +221,25 @@
                         </div>
                     </div>
 
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_basketZOffset">Basket z Offset : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_basketZOffset" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">m</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_basketZOffset">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -217,7 +255,7 @@
                 </div>
 
                 <div class="panelContentDiv" id="panelCnt_forward">
-                    <!-- theta, r-->
+                    <!-- theta, r, z_robot-->
 
                     <div class="fieldDiv">
                         <div class="fieldCol1">
@@ -257,6 +295,99 @@
                         </div> 
                     </div>
 
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_z_robot">z_robot : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_z_robot" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">m</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_z_robot">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div> 
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Error Compensation -->
+            <div class="panelDiv">
+                <div class="panelHeadDiv">
+                    <h2 class="header1">Error Compensation</h2>
+                    <button class="clpsBtn" id="clpsBtn_errorCmpst">
+                        <span class="material-symbols-outlined icon3">
+                            expand_more
+                        </span>
+                    </button>
+                </div>
+
+                <div class="panelContentDiv" id="panelCnt_forward">
+                    <!-- cmpst_theta, cmpst_r, cmpst_z_robot-->
+
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_cmpst_theta">Δθ : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_cmpst_theta" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">deg</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_cmpst_theta">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div> 
+                    </div>
+
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_cmpst_r">Δr : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_cmpst_r" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">m</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_cmpst_r">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div> 
+                    </div>
+
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_cmpst_z_robot">Δz_robot : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_cmpst_z_robot" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">m</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_cmpst_z_robot">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div> 
+                    </div>
+
                 </div>
             </div>
 
@@ -272,7 +403,7 @@
                 </div>
 
                 <div class="panelContentDiv" id="panelCnt_inverse">
-                    <!-- x_goal, y_goal-->
+                    <!-- x_goal, y_goal, z_goal-->
 
                     <div class="fieldDiv">
                         <div class="fieldCol1">
@@ -305,6 +436,25 @@
                         </div>
                         <div class="fieldCol4">
                             <button class="resetBtn" id="reset_y_goal">
+                                <span class="material-symbols-outlined icon1">
+                                    refresh
+                                </span>
+                            </button>
+                        </div> 
+                    </div>
+
+                    <div class="fieldDiv">
+                        <div class="fieldCol1">
+                            <label for="inp_z_goal">z_goal : </label>
+                        </div>
+                        <div class="fieldCol2">
+                            <input type="number" id="inp_z_goal" class="inp1">
+                        </div>
+                        <div class="fieldCol3">
+                            <p class="unitText">m</p>
+                        </div>
+                        <div class="fieldCol4">
+                            <button class="resetBtn" id="reset_z_goal">
                                 <span class="material-symbols-outlined icon1">
                                     refresh
                                 </span>
@@ -532,26 +682,42 @@
             </div>
             <div class="resultContentDiv">
                 <div class="txtLineDiv">
+                    <a class="txt1">To hit the goal at x =&nbsp;</a>
+                    <a id="outTxt_x_goal" class="outTxt1">XXXX</a>
+                    <a class="txt1">&nbsp;m, y =&nbsp;</a>
+                    <a id="outTxt_y_goal" class="outTxt1">XXXX</a>
+                    <a class="txt1">&nbsp;m and z =&nbsp;</a>
+                    <a id="outTxt_z_goal" class="outTxt1">XXXX</a>
+                    <a class="txt1">&nbsp;m </a>
+                </div>
+                <div class="txtLineDiv">
                     <a class="txt1">Using parameters θ =&nbsp;</a>
                     <a id="outTxt_theta" class="outTxt1">XXXX</a>
-                    <a class="txt1">&nbsp;deg and r =&nbsp;</a>
+                    <a class="txt1">&nbsp;deg, r =&nbsp;</a>
                     <a id="outTxt_r" class="outTxt1">XXXX</a>
+                    <a class="txt1">&nbsp;m and z_robot =&nbsp;</a>
+                    <a id="outTxt_z_robot" class="outTxt1">XXXX</a>
                     <a class="txt1">&nbsp;m</a>
                 </div>
                 <div class="txtLineDiv">
-                    <a class="txt1">To hit the goal at y =&nbsp;</a>
-                    <a id="outTxt_y_goal" class="outTxt1">XXXX</a>
+                    <a class="txt1">Compensated to θ =&nbsp;</a>
+                    <a id="outTxt_cmpst_theta" class="outTxt1">XXXX</a>
+                    <a class="txt1">&nbsp;deg, r =&nbsp;</a>
+                    <a id="outTxt_cmpst_r" class="outTxt1">XXXX</a>
+                    <a class="txt1">&nbsp;m and z_robot =&nbsp;</a>
+                    <a id="outTxt_cmpst_z_robot" class="outTxt1">XXXX</a>
                     <a class="txt1">&nbsp;m</a>
                 </div>
 
                 <hr width="100%" color="#4A726B">
+                
                 <div class="txtLineDiv">
                     <a class="txt1">Y-intercept at goal :&nbsp;</a>
                     <a id="outTxt_y_intercept" class="outTxt1">XXXX</a>
                     <a class="txt1">&nbsp;m</a>
                 </div>                
                 <div class="txtLineDiv">
-                    <a class="txt1">Distance of missing :&nbsp;</a>
+                    <a class="txt1">Missing distance :&nbsp;</a>
                     <a id="outTxt_error_y" class="outTxt1">XXXX</a>
                     <a class="txt1">&nbsp;m</a>
                     <a class="txt1">&nbsp;=&nbsp;</a>
