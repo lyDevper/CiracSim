@@ -352,25 +352,60 @@
 
                 <div class="panelContentDiv" id="panelCnt_goalPos">
                     <canvas id="canvas2"></canvas>
+ 
+                    <div class="gsPosDiv">
+                        <div class="gsPosHeadDiv">
+                            <div class="gsPosHeadCol1">
+                                <a>Position 1 : </a>
+                            </div>
+                            <div class="gsPosHeadCol2">
+                                <button id="usePos1_btn" class="usePosBtn">Use</button>
+                            </div>
+                            <div class="gsPosHeadCol3">
+                                <button class="resetBtn" id="reset_gsPos1">
+                                    <span class="material-symbols-outlined icon1">
+                                        refresh
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
 
-                    <div class="fieldDiv">
-                        <div class="fieldCol1">
-                            <label for="inp_x_goal">x_goal : </label>
+                        <div class="gsFieldDiv">
+                            <div class="gsFieldCol1">
+                                <a>Original : </a>
+                            </div>
+                            <div class="gsFieldCol2">
+                                <label>&#40;&nbsp;z =&nbsp;</label>
+                                <input type="number" id="inp_gsPos1_original_x" class="inp1 inp_gsPos">
+                                <label>&nbsp;,&nbsp;&nbsp;&nbsp;</label>
+                                <label>y =&nbsp;</label>
+                                <input type="number" id="inp_gsPos1_original_y" class="inp1 inp_gsPos">
+                                <label>&nbsp;&#41;</label>
+                            </div>
+                            <div class="gsFieldCol3">
+                                <p id="unitTxt_pos1_original" class="unitText gsUnitText">m</p>
+                            </div>
                         </div>
-                        <div class="fieldCol2">
-                            <input type="number" id="inp_x_goal" class="inp1">
+
+                        <div class="gsFieldDiv">
+                            <div class="gsFieldCol1">
+                                <a>Rotated to : </a>
+                            </div>
+                            <div class="gsFieldCol2">
+                                <label>&#40;&nbsp;z =&nbsp;</label>
+                                <input type="number" id="inp_gsPos1_rotated_x" class="inp1 inp_gsPos">
+                                <label>&nbsp;,&nbsp;&nbsp;&nbsp;</label>
+                                <label>y =&nbsp;</label>
+                                <input type="number" id="inp_gsPos1_rotated_y" class="inp1 inp_gsPos">
+                                <label>&nbsp;&#41;</label>
+                            </div>
+                            <div class="gsFieldCol3">
+                                <p id="unitTxt_pos1_rotated" class="unitText gsUnitText">m</p>
+                            </div>
                         </div>
-                        <div class="fieldCol3">
-                            <p class="unitText">m</p>
-                        </div>
-                        <div class="fieldCol4">
-                            <button class="resetBtn" id="reset_x_goal">
-                                <span class="material-symbols-outlined icon1">
-                                    refresh
-                                </span>
-                            </button>
-                        </div> 
+
                     </div>
+                    
                         
                 </div>
             </div>

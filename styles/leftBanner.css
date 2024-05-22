@@ -83,11 +83,11 @@
     width: 32%;
 }
 .fieldCol2 {
-    width: 36%;
+    width: 32%;
 }
 .fieldCol3 {
     width: 20%;
-    padding-left: 6px;
+    padding-left: 12px;
 }
 .fieldCol4 {    
     width: 8%;
@@ -133,6 +133,7 @@
 
     position: relative;
     top: 1px;
+    right: 14px;
 }
 .resetBtn:hover {
     color: #ffffffca;
