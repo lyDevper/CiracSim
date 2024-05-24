@@ -11,6 +11,7 @@ class BackGrid extends Sprite {
         this.gridWidth = 1;
         this.axisColor = '#D49AE8';
         this.axisWidth = 2;
+        this.shadowWidth = 0.4; //m
     }
 
     drawBackground() {
@@ -58,6 +59,13 @@ class BackGrid extends Sprite {
         this.ctx.moveTo(0, this.coor.originY);
         this.ctx.lineTo(this.coor.canvasWidth, this.coor.originY);
         this.ctx.stroke();
+        // draw z-axis shadow
+        let shadowWidth = this.coor.meterToPix(this.shadowWidth);
+        let grad = this.ctx.createLinearGradient(0, this.coor.originY, 0, this.coor.originY + shadowWidth);
+        grad.addColorStop(0, "rgba(212, 154, 232, 0.4)");
+        grad.addColorStop(0.8, "rgba(36, 108, 157, 0.0)"); 
+        this.ctx.fillStyle = grad;
+        this.ctx.fillRect(0, this.coor.originY, this.coor.canvasWidth, this.coor.originY + shadowWidth);
     }
 
     render() {
