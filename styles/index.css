@@ -61,9 +61,9 @@ button {
 .resultBoxDiv {
     position: absolute;
     right: 3vw;
-    bottom: 3.2vh;
-    width: 30vw;
-    height: 25vh;
+    bottom: 3.3vh;
+    width: 480px;
+    height: 25vh; /* 210px */
 
     display: flex;
     flex-direction: column;
