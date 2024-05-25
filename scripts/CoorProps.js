@@ -53,6 +53,10 @@ class CoorProps {
         return this.actualToCanvasPoint(new Point(x, y));
     }
 
+    canvasXyToActual(x, y) {
+        return this.canvasToActualPoint(new Point(x,y));
+    }
+
     // for canvas1 to display simulation content
     static buildInstance1(canvas) {
         let coor1 = new CoorProps(canvas);
