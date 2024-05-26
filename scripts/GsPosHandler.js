@@ -41,8 +41,7 @@ class GsPosHandler {
         
         // use button: apply position to y_goal and z_goal
         this.useBtn.addEventListener('click', () => {
-            StatePara.y_goal = this.gsPosState.rotatedPos.y + StatePara.tableHeight;
-            StatePara.z_goal = this.gsPosState.rotatedPos.z;
+            this.useValue();
         });
 
         // reset button: reset to default position
@@ -81,6 +80,12 @@ class GsPosHandler {
         let z = parseFloat(this.rotated_z_inp.value);
         let y = parseFloat(this.rotated_y_inp.value);
         this.gsPosState.rotatedPos = new Point(0, y, z); // trigger setter
+    }
+
+    useValue() {
+        // apply this position to y_goal and z_goal
+        StatePara.y_goal = this.gsPosState.rotatedPos.y + StatePara.tableHeight;
+        StatePara.z_goal = this.gsPosState.rotatedPos.z;
     }
 
     static buildHandlers() {
