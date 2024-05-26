@@ -1,7 +1,7 @@
 class DefaultGsPos {
     // as announced in the mission
     static pos1 = new Point(0, 0, 0);
-    static pos2 = new Point(0, 2, 3);
+    static pos2 = new Point(0, 0.2, 0.5);
     static pos3 = new Point(0, 0.5, 0.3);
 }
 

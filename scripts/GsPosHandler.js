@@ -106,5 +106,9 @@ class GsPosHandler {
             'inp_gsPos3_rotated_z', 'inp_gsPos3_rotated_y',
             'usePos3_btn', 'reset_gsPos3', GoalSimStates.gsPosState3
         );
+
+        // handle rotate angle
+        this.gsRotateAng_Handler = new ParaInpHandler('inp_gsRotateAng', 'reset_gsRotateAng', 
+            GoalSimStates.rotateAng_state, 0, 120);
     }
 }
