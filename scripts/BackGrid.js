@@ -12,6 +12,8 @@ class BackGrid extends Sprite {
         this.axisColor = '#D49AE8';
         this.axisWidth = 2;
         this.shadowWidth = 0.4; // m
+
+        this.NumbTextColor = 'rgba(255,255,255, 0.36)';
         this.textOffsetY = 0.07; // m
         this.textOffsetX = 0.03; // m
     }
@@ -33,30 +35,30 @@ class BackGrid extends Sprite {
         for (let i = 1; i <= numGridLeft; i++) {
             this.ctx.moveTo(this.coor.originX - i * this.pixPerGridCell, 0);
             this.ctx.lineTo(this.coor.originX - i * this.pixPerGridCell, this.coor.canvasHeight);84
-            this.drawText((-i * this.gridCellSize).toFixed(1), (this.gridCellSize * (-i)) + 0.02, -this.textOffsetY, "rgba(255,255,255, 0.2)");
+            this.drawText((-i * this.gridCellSize).toFixed(1), (this.gridCellSize * (-i)) + 0.02, -this.textOffsetY, this.NumbTextColor);
         }
         for (let i = 1; i <= numGridRight; i++) {
             this.ctx.moveTo(this.coor.originX + i * this.pixPerGridCell, 0);
             this.ctx.lineTo(this.coor.originX + i * this.pixPerGridCell, this.coor.canvasHeight);
-            this.drawText((i * this.gridCellSize).toFixed(1), (this.gridCellSize * i) + 0.02, -this.textOffsetY, "rgba(255,255,255, 0.2)");
+            this.drawText((i * this.gridCellSize).toFixed(1), (this.gridCellSize * i) + 0.02, -this.textOffsetY, this.NumbTextColor);
         }
         for (let i = 1; i <= numGridTop; i++) {
             this.ctx.moveTo(0, this.coor.originY - i * this.pixPerGridCell);
             this.ctx.lineTo(this.coor.canvasWidth, this.coor.originY - i * this.pixPerGridCell);
-            this.drawText((i * this.gridCellSize).toFixed(1), this.textOffsetX, (this.gridCellSize * i) + 0.01, "rgba(255,255,255, 0.2)");
+            this.drawText((i * this.gridCellSize).toFixed(1), this.textOffsetX, (this.gridCellSize * i) + 0.01, this.NumbTextColor);
         }
         for (let i = 1; i <= numGridBottom; i++) {
             this.ctx.moveTo(0, this.coor.originY + i * this.pixPerGridCell);
             this.ctx.lineTo(this.coor.canvasWidth, this.coor.originY + i * this.pixPerGridCell);
-            this.drawText((-i * this.gridCellSize).toFixed(1), this.textOffsetX, (this.gridCellSize * (-i)) + 0.01, "rgba(255,255,255, 0.2)");
+            this.drawText((-i * this.gridCellSize).toFixed(1), this.textOffsetX, (this.gridCellSize * (-i)) + 0.01, this.NumbTextColor);
         }
         this.ctx.stroke();
-        this.drawText(0, this.textOffsetX, -this.textOffsetY, "rgba(255,255,255, 0.2)");
+        this.drawText(0, this.textOffsetX, -this.textOffsetY, this.NumbTextColor);
     }
 
     drawText(text, x, y, color, fontSize = 10) {
         let pos = this.coor.xyToCanvasPoint(x, y);
-        this.ctx.font = `${fontSize}px Roboto`;
+        this.ctx.font = `${fontSize}px Roboto light`;
         this.ctx.fillStyle = color;
         this.ctx.fillText(text, pos.x, pos.y);
     }

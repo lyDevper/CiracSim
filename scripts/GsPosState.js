@@ -34,7 +34,7 @@ class GsPosState {
         });
     }
 
-    get originalPos() {
+    get originalPos() { // : Point
         return this.originalPos_state.getValue();
     }
 
@@ -43,7 +43,7 @@ class GsPosState {
         // this will calculate and set rotated position
     }
 
-    get rotatedPos() {
+    get rotatedPos() { // : Point
         return this.rotatedPos_state.getValue();
     }
 
