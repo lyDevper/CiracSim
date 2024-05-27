@@ -1,8 +1,8 @@
 class DefaultGsPos {
     // as announced in the mission
-    static pos1 = new Point(0, 0, 0);
-    static pos2 = new Point(0, 0.2, 0.5);
-    static pos3 = new Point(0, 0.5, 0.3);
+    static pos1 = new Point(0, 0.070, StatePara.triangleSide/2 - 0.120);
+    static pos2 = new Point(0, 0.070, StatePara.triangleSide/2 + 0.075);
+    static pos3 = new Point(0, 0.210, StatePara.triangleSide/2 + 0.045);
 }
 
 class GoalSimStates {
