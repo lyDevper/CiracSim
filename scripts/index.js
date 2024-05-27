@@ -22,7 +22,7 @@ let gsTriangle  = new GsTriangle(canvas2, coor2);
 let gsPosCircle1 = new GsPosCircle(canvas2, coor2, GoalSimStates.gsPosState1, 1);
 let gsPosCircle2 = new GsPosCircle(canvas2, coor2, GoalSimStates.gsPosState2, 2);
 let gsPosCircle3 = new GsPosCircle(canvas2, coor2, GoalSimStates.gsPosState3, 3);
-
+let gsBall = new GsBall(canvas2, coor2);
 
 ParaInpHandler.buildHandlers();
 PanelClpsHandler.buildHandlers();

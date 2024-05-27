@@ -14,4 +14,14 @@ class GoalSimStates {
 
     static get rotateAng() { return GoalSimStates.rotateAng_state.getValue(); }
     static set rotateAng(value) { GoalSimStates.rotateAng_state.setValue(value); }
+    static {
+        GoalSimStates.rotateAng_state.addReactFunc((ang) => {
+            // value can be in 0 - 360
+            ang = ang % 360;
+            if (ang < 0) {
+                ang += 360;
+            }
+            GoalSimStates.rotateAng_state.setValue(ang);
+        });
+    }
 }

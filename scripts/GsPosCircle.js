@@ -27,7 +27,7 @@ class GsPosCircle extends Sprite {
     
     drawNumbText() {
         // draw number text at the center of the circle
-        this.ctx.font = `28px sans-serif`;
+        this.ctx.font = `24px sans-serif`;
         this.ctx.fillStyle = this.NumbTextColor;
         this.ctx.textAlign = 'center';
         this.ctx.textBaseline = 'middle';

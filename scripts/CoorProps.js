@@ -79,7 +79,7 @@ class CoorProps {
     static buildInstance2(canvas) {
         let coor2 = new CoorProps(canvas);
         coor2.updateCanvasSize = function() {
-            this.canvas.width = 0.22 * window.innerWidth;
+            this.canvas.width = 0.18 * window.innerWidth;
             this.canvas.height = this.canvas.width
             
             this.canvasWidth = this.canvas.width;
