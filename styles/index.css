@@ -111,7 +111,12 @@ button {
     font-weight: bold;
 }
 
-.highlight > a, h2 {
+.highlight > a {
     text-shadow: 0.2px 0.2px 7px rgba(248, 237, 208, 0.976);
+    color: rgb(255, 255, 255);
+}
+
+.highlightTxt {
+    text-shadow: 0.2px 0.2px 7px rgb(248, 237, 208);
     color: rgb(255, 255, 255);
 }
