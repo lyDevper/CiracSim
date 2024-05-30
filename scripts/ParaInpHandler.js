@@ -91,7 +91,7 @@ class ParaInpHandler {
                         StatePara.state_y_goal, DefaultPara.y_goal, 0.005, 4);
 
         this.z_goal_handler = new ParaInpHandler('inp_z_goal', 'reset_z_goal',
-                        StatePara.state_z_goal, DefaultPara.z_goal, 0.01, 4);
+                        StatePara.state_z_goal, DefaultPara.z_goal, 0.005, 4);
 
         this.cmpst_theta_handler = new ParaInpHandler('inp_cmpst_theta', 'reset_cmpst_theta',
                         StatePara.state_cmpst_theta, DefaultPara.cmpst_theta, 0.1, 2);
