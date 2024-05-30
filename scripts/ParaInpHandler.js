@@ -46,7 +46,7 @@ class ParaInpHandler {
     static buildHandlers() {
         // instantiate each handler as a static property
         this.rpm_handler = new ParaInpHandler('inp_rpm', 'reset_rpm', 
-                        StatePara.state_rpm, DefaultPara.rpm, 1, 0);
+                        StatePara.state_rpm, DefaultPara.rpm, 1, 1);
 
         this.rps_handler = new ParaInpHandler('inp_rps', 'reset_rps', 
                         StatePara.state_rps, DefaultPara.rps, 0.1, 3);
